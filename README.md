@@ -50,7 +50,7 @@ az group create --name $CLUSTER_NAME --location $LOCATION
 az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID
 ```
 
-Get OpenShift console (OC) sign in URL for your cluster
+Get OpenShift Web console (OC) sign in URL for your cluster
 ```
 az openshift show -n $CLUSTER_NAME -g $CLUSTER_NAME
 ```
@@ -60,6 +60,34 @@ Update your app registration redirect URI (https://docs.microsoft.com/en-us/azur
 Sign in with user account created in the Azure AD tenant which is created earlier.
 
 ![Azure Red Hat OpenShift amdin console](aro-console.png)
+
+
+On client PC (bash), Install OC Client
+```
+cd ~
+wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+mkdir openshift
+tar -zxvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz -C openshift --strip-components=1
+echo 'export PATH=$PATH:~/openshift' >> ~/.bashrc && source ~/.bashrc
+```
+Retrieve login command and token from OpenShift Web Console
+![Azure Red Hat OpenShift login command](images/login-command.png)
+
+Login using OC tool (Part of domain name, token, and username was hidden to hide my credential.)
+```
+$ oc login https://openshift.xxxxxxxxxxxxxxxxxxxx.southeastasia.azmosa.io --token={token-goes-here}
+Logged into "https://openshift.xxxxxxxxxxxxxxxxxxxx.southeastasia.azmosa.io:443" as "username@domain" using the token provided.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project <projectname>
+```
+
+Ref) 
+https://docs.openshift.com/aro/admin_guide/manage_rbac.html
+
+
+
 
 
 
