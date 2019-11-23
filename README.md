@@ -59,7 +59,7 @@ Update your app registration redirect URI (https://docs.microsoft.com/en-us/azur
 
 Sign in with user account created in the Azure AD tenant which is created earlier.
 
-
+![Azure Red Hat OpenShift amdin console](aro-console.png)
 
 
 
