@@ -85,9 +85,18 @@ You don't have any projects. You can try to create a new project, by running
     oc new-project <projectname>
 ```
 
+## Using Persistent Storage in Azure Red Hat OpenShift cluster
+When a pod needs persistent volume, create Persistent Volume Claim which will create Azure Managed Disk or Azure File Share.
+
+A PersistentVolumeClaim requests either Disk or File storage of a particular StorageClass, access mode, and size. The Kubernetes API server dynamically provisions the underlying storage resource in Azure if there is no existing resource to fulfill the claim based on the defined StorageClass.
+
+https://docs.openshift.com/aro/architecture/additional_concepts/storage.html
+https://docs.openshift.com/aro/dev_guide/persistent_volumes.html
+https://docs.microsoft.com/en-us/azure/aks/concepts-storage#persistent-volume-claims
+
 Ref) 
 https://docs.openshift.com/aro/admin_guide/manage_rbac.html
-
+https://github.com/microsoft/aroworkshop
 
 
 
