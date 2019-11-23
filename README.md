@@ -94,9 +94,11 @@ https://docs.openshift.com/aro/architecture/additional_concepts/storage.html
 https://docs.openshift.com/aro/dev_guide/persistent_volumes.html
 https://docs.microsoft.com/en-us/azure/aks/concepts-storage#persistent-volume-claims
 
-Ref) 
+
+## Reference materials
 https://docs.openshift.com/aro/admin_guide/manage_rbac.html
 https://github.com/microsoft/aroworkshop
+https://aka.ms/openshift/ebook
 
 
 
