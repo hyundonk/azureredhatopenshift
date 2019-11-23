@@ -42,7 +42,9 @@ TENANT=$(az keyvault secret show -n myarocluster-tenant-id --vault-name ${keyvau
 GROUPID=$(az keyvault secret show -n myarocluster-customer-admin-group-id --vault-name ${keyvault} | jq -r .value) && echo " - group ID: ${GROUPID}"
 APPID=$(az keyvault secret show -n myarocluster-aad-client-app-id --vault-name ${keyvault} | jq -r .value) && echo " - group ID: ${APPID}"
 SECRET=$(az keyvault secret show -n myarocluster-aad-client-app-secret --vault-name ${keyvault} | jq -r .value) && echo " - group ID: ${SECRET}"
-
+```
+Deploy an Azure Red Hat OpenShift cluster
+```
 # create resource group
 az group create --name $CLUSTER_NAME --location $LOCATION
 
